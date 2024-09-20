@@ -8,15 +8,32 @@
   <script defer src="scripts/app.js" charset="utf-8"></script>
 </head>
 <body>
+  <h1>The Snake Game</h1>
+  
+  <!-- <div id="popup" class="popup"></div>
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h2>Game Instructions</h2>
+      <p>How to Play
+Control the snake using arrow keys to move it in different directions.
+Your goal is to eat as much food as possible, which makes the snake grow longer and adds to your score.
+Avoid crashing into walls or the snake’s own body  if you do, 
+the game is over.</p>
+    </div>
+  </div> -->
+
+  <div class="game-controls"></div>
+    <div id="score">Score: 0</div>
+    <button id="start-btn">Start Game</button>
+    <button id="reset-btn">Reset Game</button>
+    </div>
   <div class="grid-wrapper">
    <section class="grid"></section>
    <div id="grid" class="hidden"></div>
   </div>
   
-  <div class="game-controls">
-    <div id="score">Score: 0</div>
-    <button id="start-btn">Start Game</button>
-    <button id="reset-btn">Reset Game</button>
-    </div>
+  
+     <!-- <h1 id="instruction-text">Press the space bar to start the game</h1> -->
+    <!-- <img id="logo"src="/image/snake-game-ai-gen.png" alt="snake-logo"/> -->
 </body>
 </html>

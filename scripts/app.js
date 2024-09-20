@@ -61,6 +61,12 @@ const removeSnake = () => {
 snake.forEach((index) => squareEls[index].classList.add(snakeClass))
 addApple() 
 
+removeApple = () => {
+  if (applePosition !== -1) {
+    squareEls[applePosition].classList.remove(appleClass); // Remove apple from position
+    applePosition = -1; // Reset apple position
+  }
+}
 
 //Move Snake
 function moveSnake(){
@@ -76,14 +82,16 @@ if (
  (direction === -width && head - width < 0)          // Hit top border
 ) {
  clearInterval(snakeInterval)//stop the snake movement 
- alert("Game Over!")
+ window.alert("Game Over!")
+ window.location.reload
  resetGame()
  return//stop the game
 }
 
 if (snake.includes(newHead)) {
   clearInterval(snakeInterval)
-  alert("Game Over")
+  window.alert("Game Over")
+  window.location.reload
   return
 }
 
@@ -143,12 +151,12 @@ function startGame() {
 function resetGame() {
   clearInterval(snakeInterval);
   removeSnake();
+  removeApple();
   snake = [2, 1, 0];
   direction = 1;
   snakeSpeed = 500;
   score = 0;
   updateScore();
-  // addSnake();
   gameActive = false;
   startBtn.disabled = false;
   resetBtn.disabled = true;
