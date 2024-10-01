@@ -3,6 +3,29 @@ const grid = document.querySelector(".grid")
 const scoreDisplay = document.getElementById('score')
 const startBtn = document.getElementById('start-btn')
 const resetBtn = document.getElementById('reset-btn')
+const openPopupBtn = document.getElementById('openPopupBtn')
+const popup = document.getElementById('popup')
+const closePopupBtn = document.getElementById('closePopupBtn')
+
+
+
+// Open the pop-up window
+openPopupBtn.addEventListener('click', () => {
+  popup.style.display = 'block';
+});
+
+// Close the pop-up window
+closePopupBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Close the pop-up if the user clicks outside of the content area
+window.addEventListener('click', (event) => {
+  if (event.target == popup) {
+    popup.style.display = 'none';
+  }
+});
+
 
 // constants
 const width = 20
@@ -180,5 +203,3 @@ addSnake();
 startBtn.addEventListener('click', startGame);
 resetBtn.addEventListener('click', resetGame);
 
-
-//i need the text 
